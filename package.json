@@ -1,0 +1,20 @@
+{
+  "name": "backend-tests",
+  "version": "1.0.0",
+  "description": "Backend para testar APIs e validações com Node.js e Express",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-validator": "^7.2.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1",
+    "nodemon": "^3.1.0"
+  }
+}

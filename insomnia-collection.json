@@ -1,0 +1,158 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-01-01T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_api_testes",
+      "_type": "workspace",
+      "name": "API de Testes - CRUD Usuários",
+      "description": "Workspace completo para testar API CRUD de usuários"
+    },
+    {
+      "_id": "fld_crud",
+      "_type": "request_group",
+      "name": "CRUD Usuários",
+      "parentId": "wrk_api_testes"
+    },
+    {
+      "_id": "fld_tests",
+      "_type": "request_group",
+      "name": "Testes de Validação",
+      "parentId": "wrk_api_testes"
+    },
+    {
+      "_id": "req_health_check",
+      "_type": "request",
+      "name": "Health Check",
+      "method": "GET",
+      "url": "/",
+      "headers": [],
+      "body": {},
+      "parentId": "wrk_api_testes"
+    },
+    {
+      "_id": "req_list_users",
+      "_type": "request",
+      "name": "Listar Todos os Usuários",
+      "method": "GET",
+      "url": "/api/users",
+      "headers": [],
+      "body": {},
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_get_user",
+      "_type": "request",
+      "name": "Buscar Usuário por ID",
+      "method": "GET",
+      "url": "/api/users/1",
+      "headers": [],
+      "body": {},
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_create_user",
+      "_type": "request",
+      "name": "Criar Usuário",
+      "method": "POST",
+      "url": "/api/users",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"João Silva\",\n  \"email\": \"joao@email.com\"\n}"
+      },
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_update_user",
+      "_type": "request",
+      "name": "Atualizar Usuário",
+      "method": "PUT",
+      "url": "/api/users/1",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"João Santos\",\n  \"email\": \"joao.santos@email.com\"\n}"
+      },
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_delete_user",
+      "_type": "request",
+      "name": "Deletar Usuário",
+      "method": "DELETE",
+      "url": "/api/users/1",
+      "headers": [],
+      "body": {},
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_clear_users",
+      "_type": "request",
+      "name": "Limpar Todos os Usuários",
+      "method": "DELETE",
+      "url": "/api/users",
+      "headers": [],
+      "body": {},
+      "parentId": "fld_crud"
+    },
+    {
+      "_id": "req_test_empty_name",
+      "_type": "request",
+      "name": "Teste - Nome Vazio",
+      "method": "POST",
+      "url": "/api/users",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"\",\n  \"email\": \"teste@email.com\"\n}"
+      },
+      "parentId": "fld_tests"
+    },
+    {
+      "_id": "req_test_invalid_email",
+      "_type": "request",
+      "name": "Teste - Email Inválido",
+      "method": "POST",
+      "url": "/api/users",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Teste\",\n  \"email\": \"email-invalido\"\n}"
+      },
+      "parentId": "fld_tests"
+    },
+    {
+      "_id": "req_test_not_found",
+      "_type": "request",
+      "name": "Teste - Usuário Inexistente",
+      "method": "GET",
+      "url": "/api/users/999",
+      "headers": [],
+      "body": {},
+      "parentId": "fld_tests"
+    }
+  ]
+}
